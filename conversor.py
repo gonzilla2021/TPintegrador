@@ -16,3 +16,22 @@ while decimal > 0:
 
 # Mostramos el resultado
 print(f"El número {original} en base 10 convertido a base 2 es: {binario}")
+
+###############################################################################################
+
+# Pedimos al usuario un número en base 2 (como cadena)
+binario = input("Ingresa un número en base 2: ")
+
+# Empezamos desde el último exponente (posición más alta)
+exponente = len(binario) - 1
+
+nroDecimal = 0  # Acumulador del número decimal
+
+# Recorremos cada dígito binario
+for bit in binario:
+    digito = int(bit) * (2 ** exponente)  # Convertimos ese dígito a su valor en decimal
+    nroDecimal += digito  # Lo sumamos al total
+    exponente -= 1  # Bajamos el exponente para el siguiente dígito
+
+# Mostramos el resultado final
+print(f"El número en decimal es: {nroDecimal}")
